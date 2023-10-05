@@ -3,5 +3,5 @@ include {
 }
 
 terraform {
-    source = "../../modules/aws-vpc"
+    source = "../../../modules/aws-vpc"
 }
