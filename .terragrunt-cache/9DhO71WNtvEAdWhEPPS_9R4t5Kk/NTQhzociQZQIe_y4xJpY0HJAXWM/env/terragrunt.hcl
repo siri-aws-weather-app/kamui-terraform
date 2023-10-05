@@ -1,9 +1,5 @@
 remote_state {
     backend = "s3"
-    generate = {
-        path      = "backend.tf"
-        if_exists = "overwrite"
-    }
     config = {
         bucket = "kamui-terraform-state"
         key = "terragrunt/env/${path_relative_to_include()}/terraform.tfstate"
@@ -15,4 +11,9 @@ remote_state {
 
 inputs = {
     vpc_name = "aws-vpc"
+    cidr_block = "10.0.0.0/16"
+}
+
+terraform {
+    source = "../modules/aws-vpc"
 }

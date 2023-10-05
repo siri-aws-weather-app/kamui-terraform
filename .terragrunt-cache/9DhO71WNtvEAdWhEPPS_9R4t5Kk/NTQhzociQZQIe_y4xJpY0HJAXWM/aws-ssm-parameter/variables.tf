@@ -1,6 +1,6 @@
 variable name {
   type        = string
-  default     = "kamui-terraform-dev"
+  default     = "kamui-terraform"
   description = "Default name"
 }
 
