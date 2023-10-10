@@ -9,6 +9,11 @@ locals {
     environment     = local.environment_vars.locals.environment
     state_bucket    = local.environment_vars.locals.state_bucket
     dynamodb_table  = local.environment_vars.locals.dynamodb_table
+
+    # Environment specific variables
+    deps_layer_arn = local.environment_vars.locals.deps_layer_arn
+    utils_layer_arn = local.environment_vars.locals.utils_layer_arn
+    lambda_get_realtime_weather_arn = local.environment_vars.locals.lambda_get_realtime_weather_arn
 }
 
 remote_state {

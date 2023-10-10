@@ -1,41 +1,52 @@
 module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
 
-  function_name = "lambda-with-layer"
-  description   = "My awesome lambda function"
-  handler       = "index.lambda_handler"
-  runtime       = "python3.8"
+  function_name = var.function_name
+  description   = var.function_description
+  handler       = var.handler
+  runtime       = var.runtime
   publish       = true
+  architectures = ["x86_64"]
+  memory_size	  = 512
 
-  source_path = "../src/lambda-function1"
+  attach_policies	= true
+  number_of_policies	= var.number_of_policies
+
+  source_path = var.source_path
 
   store_on_s3 = true
-  s3_bucket   = "my-bucket-id-with-lambda-builds"
+  s3_bucket   = var.s3_bucket
 
+  policies		= var.policies
   layers = [
-    module.lambda_layer_s3.lambda_layer_arn,
+    var.deps_layer_arn,
+    var.utils_layer_arn
   ]
 
-  environment_variables = {
-    Serverless = "Terraform"
-  }
+  # merge environment variables with the weather api key if secret arn is provided
+  environment_variables	= merge(
+    var.environment_variables,
+    {
+      "WEATHER_API_KEY" = lookup(
+        jsondecode(
+          coalesce(
+            try(data.aws_secretsmanager_secret_version.weather_api_key_version[0].secret_string, null), "{}"
+            )
+          ), "WEATHER_API_KEY", ""
+        )
+    }
+  )
 
   tags = {
-    Module = "lambda-with-layer"
+        Terraform   = "true"
+        Environment = var.environment  
   }
 }
 
-module "lambda_layer_s3" {
-  source = "terraform-aws-modules/lambda/aws"
+# get the latest version of the weather api key if secret arn is provided
+data "aws_secretsmanager_secret_version" "weather_api_key_version" {
+  count = var.weather_api_key_secret_arn != null ? 1 : 0
 
-  create_layer = true
-
-  layer_name          = "lambda-layer-s3"
-  description         = "My amazing lambda layer (deployed from S3)"
-  compatible_runtimes = ["python3.8"]
-
-  source_path = "../src/lambda-layer"
-
-  store_on_s3 = true
-  s3_bucket   = "my-bucket-id-with-lambda-builds"
+  secret_id = var.weather_api_key_secret_arn
+  version_stage = "AWSCURRENT"
 }
