@@ -1,0 +1,19 @@
+{
+    "type": "commonjs",
+    "scripts": {
+        "build-package": "npm run build && npm run package",
+        "build": "tsc",
+        "package": "mkdir -p dist/layers/deps-layer && cp package*.json dist/layers/deps-layer/ && cd dist/layers/deps-layer && npm ci"
+    },
+    "devDependencies": {
+        "@aws-sdk/types": "^3.425.0",
+        "@types/node": "^20.8.4"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.427.0",
+        "axios": "^1.5.1"
+    }
+}
