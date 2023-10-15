@@ -54,7 +54,8 @@ async function putDataToDynamoDb (dataType: "realTimeWeather" | "weatherForecast
     const input = {
         TableName: tableName,
         Item: {
-            "id": { N: localtimeEpoch },
+            "city": { S: city.toLowerCase() },
+            "timestamp": { N: localtimeEpoch },
             "weather_data": { S: weatherDataStringified }
         },
     };
