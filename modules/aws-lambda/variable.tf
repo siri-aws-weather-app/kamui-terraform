@@ -64,7 +64,7 @@ variable "weather_api_key_secret_arn" {
 }
 
 variable "lambda_environment_variables" {
-  description = "Environ variables for the lambda function."
+  description = "Environment variables for the lambda function."
   type        = map(string)
   default     = {}
 }
