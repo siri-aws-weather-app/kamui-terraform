@@ -13,7 +13,6 @@ locals {
     # Environment specific variables
     deps_layer_arn = local.environment_vars.locals.deps_layer_arn
     utils_layer_arn = local.environment_vars.locals.utils_layer_arn
-    lambda_get_realtime_weather_arn = local.environment_vars.locals.lambda_get_realtime_weather_arn
 }
 
 remote_state {
