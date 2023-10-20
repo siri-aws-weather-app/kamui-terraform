@@ -17,5 +17,6 @@ terraform {
 inputs = {
     repositories = ["siri-aws-web-app/norns-weather-service"]
     role_name = "github-norns"
+    role_description = "Role for github actions to push to ECR to eu-central-1"
     oidc_role_attach_policies = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"]
 }

@@ -1,6 +1,6 @@
 module "github-oidc" {
-  source  = "terraform-module/github-oidc-provider/aws?ref=tags/2.1.0"
-  version = "~> 1"
+  source  = "terraform-module/github-oidc-provider/aws"
+  version = "2.1.0"
 
   role_name	= var.role_name
   role_description	= var.role_description
