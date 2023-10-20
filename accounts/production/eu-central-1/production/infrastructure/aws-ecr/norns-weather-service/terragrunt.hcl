@@ -15,5 +15,5 @@ terraform {
 }
 
 inputs = {
-    repository_name = "ever-given"
+    repository_name = "norns-weather-service"
 }
