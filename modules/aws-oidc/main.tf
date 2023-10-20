@@ -8,8 +8,6 @@ module "github-oidc" {
   create_oidc_provider = true
   create_oidc_role     = true
 
-  github_thumbprint	= var.github_thumbprint
-
   repositories              = var.repositories
   oidc_role_attach_policies = var.oidc_role_attach_policies
 }

@@ -1,8 +1,3 @@
-variable "github_thumbprint" {
-    description = "The thumbprint of Github"
-    type        = string
-}
-
 variable "repositories" {
     description = "The list of repositories to clone"
     type        = list(string)
