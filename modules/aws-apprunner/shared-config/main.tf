@@ -9,7 +9,7 @@ module "app_runner_shared_configs" {
       name            = "mini"
       max_concurrency = 20
       max_size        = 5
-      min_size        = 0
+      min_size        = 1
 
       tags = {
         Type = "Mini"
