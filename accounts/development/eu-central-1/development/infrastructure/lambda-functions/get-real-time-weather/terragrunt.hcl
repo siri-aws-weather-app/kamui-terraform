@@ -15,6 +15,14 @@ locals {
   weather_api_key_secret_arn = local.lambda_vars.locals.weather_api_key_secret_arn
 }
 
+dependency "deps_layer" {
+  config_path = "../../lambda-layers/nodejs/deps-layer"
+}
+
+dependency "utils_layer" {
+  config_path = "../../lambda-layers/nodejs/utils-layer"
+}
+
 # Set the location of Terraform configurations
 terraform {
   source = local.base_source
@@ -31,6 +39,9 @@ inputs = {
       "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
     ]
     number_of_policies = 1
+
+    deps_layer_arn = dependency.deps_layer.outputs.layer_arn
+    utils_layer_arn = dependency.utils_layer.outputs.layer_arn
 
     weather_api_key_secret_arn = local.weather_api_key_secret_arn
 }
