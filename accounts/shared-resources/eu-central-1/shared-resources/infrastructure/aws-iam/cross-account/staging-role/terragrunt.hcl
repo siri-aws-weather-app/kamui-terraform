@@ -15,10 +15,10 @@ terraform {
 }
 
 inputs = {
-    role_name = "development-role"
+    role_name = "staging-role"
     trusted_role_arns = [
-      "arn:aws:iam::360532638835:root", 
-      "arn:aws:sts::360532638835:assumed-role/AWSReservedSSO_AdministratorAccess_265a4aa76729ba37/admin1"
+      "arn:aws:iam::525284627566:root", 
+      "arn:aws:sts::525284627566:assumed-role/AWSReservedSSO_AdministratorAccess_87c1a7be2f6f8802/admin1"
     ]
     custom_role_policy_arns = [
       "arn:aws:iam::aws:policy/AmazonRoute53FullAccess",
