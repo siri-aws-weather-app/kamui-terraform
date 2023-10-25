@@ -6,7 +6,11 @@ include "root" {
 
 locals {
   # Expose the base source path
-  base_source = "${dirname(find_in_parent_folders())}/../modules/aws-oidc"
+  base_source = "${dirname(find_in_parent_folders())}/../modules/aws-github-oidc/role"
+}
+
+dependency "oidc_provider_arn" {
+  config_path = "../github-oidc-provider"
 }
 
 # Set the location of Terraform configurations
@@ -19,4 +23,5 @@ inputs = {
     role_name = "github-norns"
     role_description = "Role for github actions to push to ECR to eu-central-1"
     oidc_role_attach_policies = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"]
+    oidc_provider_arn = dependency.oidc_provider_arn.outputs.oidc_provider_arn
 }

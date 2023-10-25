@@ -19,9 +19,9 @@ terraform {
 }
 
 inputs = {
-    repositories = ["siri-aws-web-app/norns-weather-service"]
-    role_name = "github-norns"
-    role_description = "Role for github actions to push to ECR to eu-central-1"
-    oidc_role_attach_policies = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"]
+    repositories = ["siri-aws-web-app/freyr-weather-app"]
+    role_name = "github-freyr"
+    role_description = "Role for github actions to sync with S3 Static Website"
+    oidc_role_attach_policies = ["arn:aws:iam::aws:policy/AmazonS3FullAccess"]
     oidc_provider_arn = dependency.oidc_provider_arn.outputs.oidc_provider_arn
 }
