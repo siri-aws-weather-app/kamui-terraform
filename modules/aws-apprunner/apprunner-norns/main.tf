@@ -3,6 +3,9 @@ module "app_runner_image_base" {
 
   service_name = var.service_name
 
+  create_custom_domain_association = var.create_custom_domain_association
+  domain_name                      = var.domain_name
+
   # From shared configs
   auto_scaling_configuration_arn = var.auto_scaling_configuration_arn
 

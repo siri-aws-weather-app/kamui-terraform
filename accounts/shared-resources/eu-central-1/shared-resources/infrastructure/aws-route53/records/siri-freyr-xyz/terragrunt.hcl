@@ -57,6 +57,14 @@ inputs = {
         "ns-2004.awsdns-58.co.uk",
         "ns-1229.awsdns-25.org"
       ]
+    },
+    {
+      name = "norns"
+      type = "CNAME"
+      ttl  = 300
+      records = [
+        "https://qr3gs2phpt.eu-central-1.awsapprunner.com"
+      ]
     }
   ])
 }
