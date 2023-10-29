@@ -4,8 +4,8 @@ variable "zone_name" {
 }
 
 variable "records" {
-  type        = list(any)
-  description = "The list of records to create"
+  type        = any
+  description = "This is basically jsonencoded records due to a bug with terragrunt"
 }
 
 variable "environment" {
