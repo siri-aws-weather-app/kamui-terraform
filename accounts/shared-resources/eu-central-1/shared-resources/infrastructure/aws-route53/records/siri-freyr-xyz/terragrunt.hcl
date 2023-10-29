@@ -26,6 +26,17 @@ inputs = {
       }
     },
     {
+      name = "www"
+      type = "NS"
+      ttl  = 172800
+      records = [
+        "ns-544.awsdns-04.net",
+        "ns-1207.awsdns-22.org",
+        "ns-147.awsdns-18.com",
+        "ns-1853.awsdns-39.co.uk"
+      ]
+    },
+    {
       name = "development"
       type = "NS"
       ttl  = 172800
