@@ -21,8 +21,8 @@ inputs = {
       name = ""
       type = "A"
       alias = {
-        name                   = "d2ns85ttpy0os7.cloudfront.net"
-        zone_id                = "Z2FDTNDATAQYW2"
+        name  = "d2ns85ttpy0os7.cloudfront.net"
+        zone_id = "Z2FDTNDATAQYW2"
       }
     },
     {
@@ -60,11 +60,11 @@ inputs = {
     },
     {
       name = "norns"
-      type = "CNAME"
-      ttl  = 300
-      records = [
-        "https://qr3gs2phpt.eu-central-1.awsapprunner.com"
-      ]
-    }
+      type = "A"
+      alias = {
+        name = "qr3gs2phpt.eu-central-1.awsapprunner.com"
+        zone_id = "Z0334911C2FDI2Q9M4FZ"
+      }
+    },
   ])
 }
