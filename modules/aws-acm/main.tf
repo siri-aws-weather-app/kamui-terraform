@@ -1,6 +1,6 @@
 provider "aws" {
   alias  = "acm"
-  region = "us-east-1"
+  region = var.acm_aws_region
 }
 
 # Assumed role in shared-resources account
@@ -30,7 +30,7 @@ module "acm" {
 
   wait_for_validation = false
 
-  create_route53_records  = false
+  create_route53_records = false
 
   tags = {
     Name = var.domain_name

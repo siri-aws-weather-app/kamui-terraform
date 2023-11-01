@@ -66,5 +66,37 @@ inputs = {
         zone_id = "Z0334911C2FDI2Q9M4FZ"
       }
     },
+    {
+      name = "_b4e718b99382a7c520c145991eff9ecb.norns"
+      type = "CNAME"
+      ttl  = 300
+      records = [
+        "_431d5cf6b2d55939035041199f2a742f.myvvytqgqf.acm-validations.aws.",
+      ]
+    },
+    {
+      name = "_db6ba21b8d4c923e4f818d0ddc5d39d4.2a57j77vlfaz09ss1wnpklqkas4u8n9.norns"
+      type = "CNAME"
+      ttl  = 300
+      records = [
+        "_cc4cb4747c7f3a45fbe83597adceb48d.myvvytqgqf.acm-validations.aws",
+      ]
+    },
+    {
+      name = "_5b039c619e956ac398bfbdcd1461b81e.www.norns"
+      type = "CNAME"
+      ttl  = 300
+      records = [
+        "_a1a3750396e2609139e6f29211006ec6.myvvytqgqf.acm-validations.aws.",
+      ]
+    },
+    {
+      name = "api.norns"
+      type = "CNAME"
+      ttl  = 300
+      records = [
+        "4oh7yrigok.execute-api.eu-central-1.amazonaws.com",
+      ]
+    },
   ])
 }

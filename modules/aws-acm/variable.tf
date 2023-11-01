@@ -1,3 +1,9 @@
+variable "acm_aws_region" {
+  type        = string
+  default     = "us-east-1"
+  description = "The AWS region to use for the ACM certificate"
+}
+
 variable "role_arn" {
   type        = string
   default     = ""
