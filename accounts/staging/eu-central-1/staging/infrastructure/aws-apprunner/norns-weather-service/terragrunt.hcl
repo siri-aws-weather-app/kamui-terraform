@@ -20,6 +20,8 @@ terraform {
 
 inputs = {
   service_name = "norns-weather-service"
+  create_custom_domain_association = true
+  domain_name = "norns.staging.siri-freyr.xyz"
   auto_scaling_configuration_arn = dependency.shared_config.outputs.auto_scaling_configuration_arn
-  image_identifier = "525284627566.dkr.ecr.eu-central-1.amazonaws.com/norns-weather-service-staging:v0.0.1-stag"
+  image_identifier = "525284627566.dkr.ecr.eu-central-1.amazonaws.com/norns-weather-service-staging:v0.0.2-stag"
 }

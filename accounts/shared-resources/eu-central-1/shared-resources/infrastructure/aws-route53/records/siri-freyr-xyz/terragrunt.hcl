@@ -91,12 +91,12 @@ inputs = {
       ]
     },
     {
-      name = "api.norns"
-      type = "CNAME"
-      ttl  = 300
-      records = [
-        "4oh7yrigok.execute-api.eu-central-1.amazonaws.com",
-      ]
+      name = "api"
+      type = "A"
+      alias = {
+        name = "d-a2pn0ep6xc.execute-api.eu-central-1.amazonaws.com"
+        zone_id = "Z1U9ULNL0V5AJ3"
+      }
     },
   ])
 }

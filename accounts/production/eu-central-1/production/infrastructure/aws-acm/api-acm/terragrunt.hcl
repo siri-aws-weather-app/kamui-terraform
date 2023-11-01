@@ -17,6 +17,6 @@ terraform {
 inputs = {
     acm_aws_region = "eu-central-1"
     role_arn = "arn:aws:iam::416023482452:role/production-role"
-    domain_name = "api.norns.siri-freyr.xyz"
+    domain_name = "api.siri-freyr.xyz"
     zone_id = "Z095691014EJX51I256ZM"
 }
