@@ -16,7 +16,7 @@ module "eventbridge" {
     }
     get-weather-forecast = {
       description         = "Trigger for getWeatherForecast lambda function."
-      schedule_expression = "rate(1 day)"
+      schedule_expression = "rate(8 hours)"
       timezone            = "Europe/Berlin"
       arn                 = var.get_weather_forecast_lambda_arn
       input               = jsonencode({ "job" : "cron-by-rate" })
