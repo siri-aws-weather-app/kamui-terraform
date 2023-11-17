@@ -11,6 +11,11 @@ locals {
 
 dependency "api-acm" {
   config_path = "../../aws-acm/api-acm"
+
+  mock_outputs = {
+    acm_certificate_arn = "siri-is-the-best-and-most-charming-and-most-handsome"
+  }
+  mock_outputs_allowed_terraform_commands = ["destroy", "validate"]
 }
 
 # Set the location of Terraform configurations

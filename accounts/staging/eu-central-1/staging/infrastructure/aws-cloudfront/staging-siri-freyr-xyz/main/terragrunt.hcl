@@ -11,6 +11,11 @@ locals {
 
 dependency "s3_endpoint" {
   config_path = "../../../aws-s3/freyr-static-website-host"
+
+  mock_outputs = {
+    s3_bucket_website_endpoint = "siri-is-the-best-mockname"
+  }
+  mock_outputs_allowed_terraform_commands = ["destroy", "validate"]
 }
 
 # Set the location of Terraform configurations

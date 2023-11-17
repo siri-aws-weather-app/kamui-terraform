@@ -17,10 +17,20 @@ locals {
 
 dependency "deps_layer" {
   config_path = "../../lambda-layers/nodejs/deps-layer"
+
+  mock_outputs = {
+    layer_arn = "siri-is-the-best-and-most-charming-and-most-handsome"
+  }
+  mock_outputs_allowed_terraform_commands = ["destroy", "validate"]
 }
 
 dependency "utils_layer" {
   config_path = "../../lambda-layers/nodejs/utils-layer"
+
+  mock_outputs = {
+    layer_arn = "siri-is-the-best-and-most-charming-and-most-handsome"
+  }
+  mock_outputs_allowed_terraform_commands = ["destroy", "validate"]
 }
 
 # Set the location of Terraform configurations

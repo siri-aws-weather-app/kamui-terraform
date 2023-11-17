@@ -11,6 +11,11 @@ locals {
 
 dependency "shared_config" {
   config_path = "../shared-config"
+
+  mock_outputs = {
+    auto_scaling_configuration_arn = "siri-is-the-best-and-most-charming-and-most-handsome"
+  }
+  mock_outputs_allowed_terraform_commands = ["destroy", "validate"]
 }
 
 # Set the location of Terraform configurations

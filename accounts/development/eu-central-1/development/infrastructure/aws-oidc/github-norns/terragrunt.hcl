@@ -11,6 +11,11 @@ locals {
 
 dependency "oidc_provider_arn" {
   config_path = "../github-oidc-provider"
+
+  mock_outputs = {
+    oidc_provider_arn = "siri-is-the-best-and-most-charming-and-most-handsome"
+  }
+  mock_outputs_allowed_terraform_commands = ["destroy", "validate"]
 }
 
 # Set the location of Terraform configurations
